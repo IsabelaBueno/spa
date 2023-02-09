@@ -17,7 +17,9 @@ import {
   Content
 } from "./styles";
 
-const CardGroup = memo(() => {
+
+
+const CardGroup = ((props) => {
   const users = [1, 2, 3, 4, 5,6];
   const amountUsersToShow = 4;
   const showingUsers = users.slice(0, amountUsersToShow);
@@ -44,9 +46,9 @@ const CardGroup = memo(() => {
         <Content>
         <PeopleImage src={peopleTeams} />
 
-        <Description>Fabrica Itau - Torre 1</Description>
+        <Description> {props.title} </Description>
         <TeamsContainer>
-          <span>Team members</span>
+          <span>{props.teamMembers} </span>
 
           <AvatarContainer>
       {showingUsers.map((user, index) => (
